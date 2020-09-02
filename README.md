@@ -18,7 +18,8 @@ Features:
 How To Use:
 1. Update signatures if needed
 2. Build the source for x64 in Release mode
-3. Run the application
+3. Run the R6S with Battleye disabled(Command line argument /belaunch -be)
+4. Run the application when in the main menu
 4. Enjoy ;)
 
 Credits:
