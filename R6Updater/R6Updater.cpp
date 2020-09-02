@@ -77,7 +77,6 @@ int main()
 
     case 7:
         system("cls");
-        std::cout << "Cya later ;)\n";
         return 0;
         break;
 
@@ -119,7 +118,6 @@ int main()
     }
 
     CloseHandle(Memory::hProc);
-    std::cout << "Cya later ;)\n";
 
     return 0;
 }
