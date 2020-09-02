@@ -89,6 +89,8 @@ int main()
         break;
     }
 
+    AGAIN:
+    
     choice = 0;
 
     std::cout << "\nAgain(1: Yes, 2: No)?\n\n";
@@ -113,7 +115,7 @@ int main()
         std::cout << "Please enter a valid choice!\n";
         Sleep(3000);
         system("cls");
-        goto OPTIONS;
+        goto AGAIN;
         break;
     }
 
