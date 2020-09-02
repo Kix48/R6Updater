@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{04e3af1a-f9b7-4b46-9e7e-106f0f8acac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Scan">
+      <UniqueIdentifier>{33f9db23-c1a9-44f1-b9af-61688f230007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Patterns">
+      <UniqueIdentifier>{1a188b6a-bf83-4ff6-ac8e-c2194ccf82c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Memory">
+      <UniqueIdentifier>{e4dd17f5-161f-4426-a09e-38be81009d2a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="R6Updater.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Scan.cpp">
+      <Filter>Src\Scan</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Src\Memory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scan.h">
+      <Filter>Src\Scan</Filter>
+    </ClInclude>
+    <ClInclude Include="Patterns.h">
+      <Filter>Src\Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Src\Memory</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

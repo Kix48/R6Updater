@@ -1,0 +1,10 @@
+#pragma once
+
+namespace Patterns
+{
+	const char* GameManager = "48 8B 0D ? ? ? ? BA ? ? ? ? 48 03 57 ?";
+	const char* ProfileManager = "48 8B 05 ? ? ? ? 48 8B 40 ? BD ? ? ? ? 31 DB";
+	const char* RoundManager = "48 8B 05 ? ? ? ? 83 B8 ? ? ? ? ? 0F 95 C1";
+	const char* GlowManager = "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 89 F2 E8 ? ? ? ? 48 85 C0 74 ?";
+	const char* NetworkManager = "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8B B0 ? ? ? ? 48 85 F6";
+}
