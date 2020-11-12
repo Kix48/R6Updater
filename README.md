@@ -7,7 +7,7 @@ Last Updated: Shadow Legacy
 
 Features:
 
-- All managers
+- All managers*
 
 - Other patching offsets such as unlock all
 
@@ -20,3 +20,5 @@ How To Use:
 
 Credits:
 - All scanning functions are from https://guidedhacking.com/threads/external-internal-pattern-scanning-guide.14112/
+
+*Note: Network manager is broken
