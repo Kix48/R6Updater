@@ -3,19 +3,13 @@ Offset Dumper for Rainbow Six Siege
 
 Video: https://www.youtube.com/watch?v=5fYq97y8XP8
 
-Last Updated: Steel Wave
+Last Updated: Shadow Legacy
 
 Features:
 
--GameManager(0x603DD10)
+- All managers
 
--ProfileManager(0x6045978)
-
--RoundManager(0x6054198)
-
--GlowManager(0x5529160)
-
--NetworkManager(0x6A3D708)
+- Other patching offsets such as unlock all
 
 How To Use:
 1. Update signatures if needed
