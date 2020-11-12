@@ -14,6 +14,16 @@ void ScanProfileManager();
 void ScanRoundManager();
 void ScanGlowManager();
 void ScanNetworkManager();
+void ScanFovManager();
+void ScanRunAndShoot();
+void ScanPingThroughWalls();
+void ScanSpottedEsp();
+void ScanVtMarker();
+void ScanUnlockAll();
+void ScanSilent();
+void ScanRecoil();
+void ScanSpectate();
+void ScanThickness();
 void ScanAll();
 
 int main()
@@ -24,7 +34,7 @@ int main()
     OPTIONS:
 
     std::cout << "~~~~~~~~~~ Options ~~~~~~~~~~\n";
-    std::cout << "1. All\n";
+    std::cout << "1. All (More Offsets)\n";
     std::cout << "2. GameManager\n";
     std::cout << "3. ProfileManager\n";
     std::cout << "4. RoundManager\n";
@@ -157,7 +167,7 @@ void ScanGameManager()
 
     uint64_t manager = Memory::GetActualAddr((uint64_t)scan->PatternScan(Patterns::GameManager) + 0x3);
 
-    std::cout << "GameManager    -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
+    std::cout << "GameManager      -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
 
     delete scan;
 }
@@ -168,7 +178,7 @@ void ScanProfileManager()
 
     uint64_t manager = Memory::GetActualAddr((uint64_t)scan->PatternScan(Patterns::ProfileManager) + 0x3);
 
-    std::cout << "ProfileManager -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
+    std::cout << "ProfileManager   -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
 
     delete scan;
 }
@@ -179,7 +189,7 @@ void ScanRoundManager()
 
     uint64_t manager = Memory::GetActualAddr((uint64_t)scan->PatternScan(Patterns::RoundManager) + 0x3);
 
-    std::cout << "RoundManager   -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
+    std::cout << "RoundManager     -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
 
     delete scan;
 }
@@ -190,7 +200,7 @@ void ScanGlowManager()
 
     uint64_t manager = Memory::GetActualAddr((uint64_t)scan->PatternScan(Patterns::GlowManager) + 0x3);
 
-    std::cout << "GlowManager    -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
+    std::cout << "GlowManager      -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
 
     delete scan;
 }
@@ -201,9 +211,107 @@ void ScanNetworkManager()
 
     uint64_t manager = Memory::GetActualAddr((uint64_t)scan->PatternScan(Patterns::NetworkManager) + 0x3);
 
-    std::cout << "NetworkManager -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
+    std::cout << "NetworkManager   -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
 
     delete scan;
+}
+
+void ScanFovManager()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t manager = Memory::GetActualAddr((uint64_t)scan->PatternScan(Patterns::FovManager) + 0x3);
+
+    std::cout << "FovManager       -> 0x" << std::hex << std::uppercase << manager << std::nouppercase << std::endl;
+
+    delete scan;
+}
+
+void ScanRunAndShoot()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t run1 = (uint64_t)scan->PatternScan(Patterns::RunAndShoot1) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "RunAndShoot1     -> 0x" << std::hex << std::uppercase << run1 << std::nouppercase << std::endl;
+
+    uint64_t run2 = (uint64_t)scan->PatternScan(Patterns::RunAndShoot2) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "RunAndShoot2     -> 0x" << std::hex << std::uppercase << run2 << std::nouppercase << std::endl;
+
+    delete scan;
+}
+
+void ScanPingThroughWalls()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t ping = (uint64_t)scan->PatternScan(Patterns::PingThroughWalls) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "PingThroughWalls -> 0x" << std::hex << std::uppercase << ping << std::nouppercase << std::endl;
+}
+
+void ScanSpottedEsp()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t spotted = (uint64_t)scan->PatternScan(Patterns::SpottedEsp) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "SpottedEsp         -> 0x" << std::hex << std::uppercase << spotted << std::nouppercase << std::endl;
+}
+
+void ScanVtMarker()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t marker = Memory::GetActualAddr((uint64_t)scan->PatternScan(Patterns::VtMarker) + 0x3);
+
+    std::cout << "VtMarker           -> 0x" << std::hex << std::uppercase << marker << std::nouppercase << std::endl;
+}
+
+void ScanUnlockAll()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t unlock = (uint64_t)scan->PatternScan(Patterns::UnlockAll) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "UnlockAll          -> 0x" << std::hex << std::uppercase << unlock << std::nouppercase << std::endl;
+}
+
+void ScanSilent()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t silent = (uint64_t)scan->PatternScan(Patterns::Silent) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "Silent             -> 0x" << std::hex << std::uppercase << silent << std::nouppercase << std::endl;
+}
+
+void ScanRecoil()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t recoil = (uint64_t)scan->PatternScan(Patterns::Recoil) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "Recoil             -> 0x" << std::hex << std::uppercase << recoil << std::nouppercase << std::endl;
+}
+
+void ScanSpectate()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t spectate = (uint64_t)scan->PatternScan(Patterns::SpoofSpectate) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "Spoof Spectate     -> 0x" << std::hex << std::uppercase << spectate << std::nouppercase << std::endl;
+}
+
+void ScanThickness()
+{
+    Scan* scan = new Scan(Memory::hProc, Memory::modEntry);
+
+    uint64_t thickness = (uint64_t)scan->PatternScan(Patterns::Thickness) - (uint64_t)Memory::modEntry.modBaseAddr;
+
+    std::cout << "Outline Thickness  -> 0x" << std::hex << std::uppercase << thickness << std::nouppercase << std::endl;
 }
 
 void ScanAll()
@@ -213,4 +321,14 @@ void ScanAll()
     ScanRoundManager();
     ScanGlowManager();
     ScanNetworkManager();
+    ScanFovManager();
+    ScanRunAndShoot();
+    ScanPingThroughWalls();
+    ScanSpottedEsp();
+    ScanVtMarker();
+    ScanUnlockAll();
+    ScanSilent();
+    ScanRecoil();
+    ScanSpectate();
+    ScanThickness();
 }
